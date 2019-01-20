@@ -24,16 +24,20 @@
     <a-scene background="color: #222222" shadow="type: pcfsoft; autoUpdate: false;" vr-mode-ui="enabled: false"
         keyboard-shortcuts="enterVR: false" custom-snooze custom-shadows embedded>
 
-        <!-- photo assets -->
+        <!-- photo assets, currently not working idk why -->
         <a-assets>
             <img id="nathanwu" src="photosmine/nathanwu.jpg">
+            <img id="nightsky" src="photosmine/nightsky.jpg">
         </a-assets>
 
         <!-- random box -->
-        <a-entity id = "therandombox" position = "10 10 10" geometry = "primitive: box" material = "color: red" light = "type: point; intensity: 3.0">
+        <a-entity id = "therandombox" position = "100 10 100" geometry = "primitive: box" material = "color: blue" light = "type: point; intensity: 3.0" >
 
+        <!-- the sky -->
+        <a-sky color = #222> </a-sky>
         <!-- environment helper -->
-        <a-entity id="theenvironment" environment="active:true;preset:default;skyType:atmosphere;lighting:none;fog:0;groundYScale:0;ground:none;playArea:1.5;flatShading:true;groundTexture:none;dressing:none;grid:none;"></a-entity>
+        
+        <a-entity id="theenvironment" environment="active:true;preset:forest;skyType:atmosphere;lighting:none;fog:0;groundYScale:0;ground:true;playArea:1.5;flatShading:true;groundTexture:none;dressing:none;grid:none;"></a-entity>
 
         <!-- lights -->
         <a-entity id="theambientlight" light="type: ambient; color: #BBBBBB"></a-entity>
@@ -48,26 +52,28 @@
 
 
         <!-- floor and platform -->
-        <a-circle id="thefloor" radius="1024" segments="1024" rotation="-90 0 0" position="0 0 0" color="#111111" shadow="cast: false; receive: true"></a-circle>
-        <a-box id="theplatform" shadow position="0 0.5 -1" rotation="0 22 0" depth="3" width="3" height=".1" color="#CCCCCC"></a-box>
+        <!--
+        <a-circle id="thefloor" radius="1024" segments="1024" rotation="-90 0 0" position="0 0 0" color="#111111" shadow="cast: false; receive: true"></a-circle>-->
+        <!--
+        <a-box id="theplatform" shadow position="0 0.5 -1" rotation="0 22 0" depth="3" width="3" height=".1" color="#CCCCCC"></a-box> -->
 
-
+       
         <!-- book -->
-        <a-entity gblock="https://poly.google.com/view/1WggoIFq8tx" position="-.28 .20 .29" scale=".7 .7 .7" shadow></a-entity>
-        <!-- pencil -->
-        <a-entity gblock="https://poly.google.com/view/5R0mBgid5-k" position="0 .8 .4" rotation="0 70 0" scale=".05 .05 .05"
-            shadow></a-entity>
-        <!-- brain -->
-        <a-entity gblock="https://poly.google.com/view/5mPRPZkI3qt" position=".07 .68 -.58" rotation="0 22 0" scale=".002 .002 .002"
-            shadow></a-entity>
+        <!--<a-entity gblock="https://poly.google.com/view/1WggoIFq8tx" position="-.28 .20 .29" scale=".7 .7 .7" shadow></a-entity> -->
+        <!-- pencil --> 
+        <!--<a-entity gblock="https://poly.google.com/view/5R0mBgid5-k" position="0 .8 .4" rotation="0 70 0" scale=".05 .05 .05"
+            shadow></a-entity> -->
+        <!-- brain --> 
+        <!--<a-entity gblock="https://poly.google.com/view/5mPRPZkI3qt" position=".07 .68 -.58" rotation="0 22 0" scale=".002 .002 .002"
+            shadow></a-entity> -->
 
         <!-- profile photo -->
-        <a-image src="#thephoto" position="-.8 1.2 -1.5" rotation="-5 30 0" shadow spin-on-mouseenter></a-image>
+        <a-image src="#nathanwu" position="-.8 1.2 -1.5" rotation="-5 30 0" shadow spin-on-mouseenter></a-image>
 
 
         <!-- text and background -->
         <a-rounded position=".66 1.34 -.9" rotation="0 -30 0" width="1.47" height=".22" radius="0.01" color="#333333"></a-rounded>
-        <a-entity text="value:This is a Bird; color:#eeeeee; shader: msdf; width:4; align:center; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/rubik/Rubik-Medium.json;"
+        <a-entity text="value:Welcome!; color:black; shader: msdf; width:4; align:center; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/rubik/Rubik-Medium.json;"
             position=".63 1.23 -.84" rotation="0 -30 0"></a-entity>
 
     </a-scene>
